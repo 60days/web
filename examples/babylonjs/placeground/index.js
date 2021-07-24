@@ -21,6 +21,11 @@ const initXrScene = () => {
   ground.rotation.x = Math.PI / 2
   ground.material = new BABYLON.StandardMaterial('groundMaterial', scene)
   ground.material.diffuseColor = BABYLON.Color3.Purple()
+  
+  // ISSUE - using floor as depth occluder
+  ground.material.disableColorWrite = true;
+  ground.material.forceDepthWrite = true;
+  
   ground.material.alpha = 0
   surface = ground
 
